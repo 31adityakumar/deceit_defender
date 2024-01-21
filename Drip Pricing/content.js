@@ -1,17 +1,23 @@
-// content.js is injected into every page
-
-// Function to check for drip pricing
 function detectDripPricing() {
-    // Replace this with your logic to check for drip pricing
-    // For example, you might look for elements that indicate additional costs
-    const additionalCostElements = document.querySelectorAll('.additional-cost');
+ 
   
-    if (additionalCostElements.length > 0) {
-      alert('Drip pricing detected! Additional costs found.');
+
+    const potentialDripElements = document.querySelectorAll('.price-breakdown, .additional-cost, .total-price');
+  
+    if (potentialDripElements.length > 0) {
+      alert('Potential drip pricing detected! Check for additional costs.');
     }
   }
   
-  // Listen for messages from the background script
+  
+  const observer = new MutationObserver(detectDripPricing);
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+  
+
   chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
       if (request.action === "detectDripPricing") {
@@ -19,7 +25,6 @@ function detectDripPricing() {
       }
     }
   );
-  
-  // Example: Run the detection function when the page is loaded
+
   detectDripPricing();
   
