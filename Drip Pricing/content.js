@@ -2,7 +2,7 @@ function detectDripPricing() {
  
   
 
-    const potentialDripElements = document.querySelectorAll('.price-breakdown, .additional-cost, .total-price');
+    const potentialDripElements = document.querySelectorAll('.break-word');
   
     if (potentialDripElements.length > 0) {
       alert('Potential drip pricing detected! Check for additional costs.');
