@@ -1,8 +1,8 @@
 {
-  "name": "GaMa",
+  "name": "Deceit Defender",
   "manifest_version": 3,
   "version": "1.0",
-  "description": "anti fraud extension that protects you from phising sites, verifies reviews and news sources so you can navigate web through confidence",
+  "description": "DPBH",
   "permissions": ["tabs", "activeTab", "contextMenus", "notifications"],
   "content_scripts": [
     {
