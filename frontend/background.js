@@ -74,12 +74,13 @@ chrome.contextMenus.onClicked.addListener((clickData) => {
       .then((data) => {
         console.log(data.prediction);
 
+        console.log(
+          data.prediction
+            ? "The review is likely fake"
+            : "The review is authentic"
+        );
 
-        // console.log(
-        //   data.prediction
-        //     ? "The review is likely fake"
-        //     : "The review is authentic"
-        // );
+        // alert("fdf");
 
         chrome.notifications.create(
           "notificationId",
@@ -89,8 +90,7 @@ chrome.contextMenus.onClicked.addListener((clickData) => {
             title: "Review Validation",
             message: data.prediction
               ? "The review is likely fake (take it with a grain of salt)"
-              : "The review is authentic",
-            priority: 1,
+              : "The review is authentic"
           },
           function (notificationId) {
             if (chrome.runtime.lastError) {
@@ -106,7 +106,6 @@ chrome.contextMenus.onClicked.addListener((clickData) => {
             }
           }
         );
-        
       })
       .catch((error) => console.log(error));
     console.log(review);
