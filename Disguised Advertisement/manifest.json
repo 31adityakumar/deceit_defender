@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Ad Detector & Cookie Manager decietDefender",
+  "version": "1.0",
+  "description": "It detects ads on websites, displays their number and helps with cookie management.",
+  "icons": {
+    "16": "icon16.png",
+    "24": "icon24.png",
+    "32": "icon32.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "cookies",
+    "webNavigation",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  }
+}

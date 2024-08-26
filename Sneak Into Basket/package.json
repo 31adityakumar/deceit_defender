@@ -1,0 +1,44 @@
+{
+  "name": "sneak-into-basket-detection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/src/index.js",
+    "clean": "rimraf dist/",
+    "build": "tsc",
+    "postinstall": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xrenegade100/sneak-into-basket-detection.git"
+  },
+  "keywords": [],
+  "author": "Domenico Antonio Gioia <antgioia10@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xrenegade100/sneak-into-basket-detection/issues"
+  },
+  "homepage": "https://github.com/xrenegade100/sneak-into-basket-detection#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cypress": "^10.3.1",
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "express": "^4.18.1",
+    "puppeteer": "^15.5.0",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/puppeteer": "^5.4.6",
+    "@typescript-eslint/eslint-plugin": "^5.34.0",
+    "cypress-browser-extension-plugin": "^0.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "rimraf": "^3.0.2"
+  }
+}
