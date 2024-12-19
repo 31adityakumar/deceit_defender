@@ -123,3 +123,7 @@ DeceitDefender detects the following patterns:
    ```bash
    git clone https://github.com/31adityakumar/deceit_defender
    cd deceit_defender
+2. Install the extension:
+
+Navigate to chrome://extensions/.
+Enable Developer Mode and load the unpacked extension folder.
